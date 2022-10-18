@@ -4,7 +4,7 @@ pipeline {
         pollSCM ('* * * * *')
     }
     stages {
-        stage ('vcs') {
+        stage ('clone') {
             steps {
                 git url: 'https://github.com/gautamshrinivas/Calculator.git',
                 branch: 'dev'
