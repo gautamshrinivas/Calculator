@@ -1,0 +1,16 @@
+pipeline {
+    agent { label 'shop'}
+    stages {
+        stage ('vcs') {
+            steps {
+                git url: 'https://github.com/gautamshrinivas/Calculator.git',
+                branch: 'dev'
+            }
+        }
+        stage ('build') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
